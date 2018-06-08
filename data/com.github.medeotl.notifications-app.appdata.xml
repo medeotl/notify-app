@@ -1,0 +1,13 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Nicomede Fasiello <FasielloN@yahoo.it> -->
+<component type="desktop">
+  <id>com.github.medeotl.notifications-app.desktop</id>
+  <metadata_license>CC0</metadata_license>
+  <name>notifications-app</name>
+  <summary>A brend new Vala+Gtk notifications app!</summary>
+  <description>
+    <p>Non so ancora che fa.</p>
+    <p>Di preciso.</p>
+    <p>Comunque notifica, fa notifiche, cioè, le notifiche. Quelle.</p>
+  </description>
+</component>

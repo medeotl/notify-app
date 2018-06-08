@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Notifications App
+GenericName=Notifications App
+Comment=Make some cool notifications with Vala and Gtk
+Categories=Utility;Education;
+Exec=com.github.medeotl.notifications-app
+Icon=application-default-icon
+Terminal=false
+Type=Application
+X-GNOME-Gettext-Domain=notifications-app
+X-GNOME-UsesNotifications=true
+Keyword=Notifications;Example;
