@@ -39,17 +39,33 @@ public class MyNotificationsApp : Gtk.Application {
 
         var title_label = new Gtk.Label ("Notifications");
         var show_button = new Gtk.Button.with_label ("Show");
+        var replace_button = new Gtk.Button.with_label ("Replace");
 
         grid.add (title_label);
         grid.add (show_button);
+        grid.add (replace_button);
 
         main_window.add (grid);
 
         show_button.clicked.connect (() => {
             var notification = new Notification ("Hello, world");
+            var icon = new GLib.ThemedIcon ("dialog-warning");
+            notification.set_icon (icon);
             notification.set_body ("This is my first notification");
             this.send_notification ("notify.app", notification);
         });
+        
+        replace_button.clicked.connect (() => {
+            var notification = new Notification ("Hello Again");
+            notification.set_body ("This is my second Notification!");
+            
+            var icon = new GLib.ThemedIcon ("dialog-warning");
+            notification.set_icon (icon);
+            
+            this.send_notification ("com.github.medeotl.notifications-app", 
+                    notification);
+        });
+                
 
         main_window.show_all ();
     }
