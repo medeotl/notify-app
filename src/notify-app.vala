@@ -52,7 +52,8 @@ public class MyNotificationsApp : Gtk.Application {
             var icon = new GLib.ThemedIcon ("dialog-warning");
             notification.set_icon (icon);
             notification.set_body ("This is my first notification");
-            this.send_notification ("notify.app", notification);
+            this.send_notification ("com.github.medeotl.notifications-app", 
+                  notification);
         });
         
         replace_button.clicked.connect (() => {
