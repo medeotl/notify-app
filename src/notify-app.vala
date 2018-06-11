@@ -52,22 +52,22 @@ public class MyNotificationsApp : Gtk.Application {
             var icon = new GLib.ThemedIcon ("dialog-warning");
             notification.set_icon (icon);
             notification.set_body ("This is my first notification");
-            this.send_notification ("com.github.medeotl.notifications-app", 
+            this.send_notification ("com.github.medeotl.notifications-app",
                   notification);
         });
-        
+
         replace_button.clicked.connect (() => {
             var notification = new Notification ("Hello Again");
             notification.set_body ("This is my 2nd Notification! I'M URGENT!");
-            
+
             var icon = new GLib.ThemedIcon ("dialog-warning");
             notification.set_icon (icon);
             notification.set_priority (NotificationPriority.URGENT);
-            
-            this.send_notification ("com.github.medeotl.notifications-app", 
+
+            this.send_notification ("com.github.medeotl.notifications-app",
                     notification);
         });
-                
+
 
         main_window.show_all ();
     }
