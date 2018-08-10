@@ -30,16 +30,16 @@ public class MyNotificationsApp : Gtk.Application {
 
     protected override void activate () {
         var main_window = new Gtk.ApplicationWindow (this);
-        main_window.title = "Notifichiamo?";
+        main_window.title = _("Notifichiamo?");
         main_window.border_width = 12;
 
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
         grid.row_spacing = 6;
 
-        var title_label = new Gtk.Label ("Notifications");
-        var show_button = new Gtk.Button.with_label ("Show");
-        var replace_button = new Gtk.Button.with_label ("Replace");
+        var title_label = new Gtk.Label _(("Notifications"));
+        var show_button = new Gtk.Button.with_label _(("Show"));
+        var replace_button = new Gtk.Button.with_label _(("Replace"));
 
         grid.add (title_label);
         grid.add (show_button);
@@ -48,17 +48,17 @@ public class MyNotificationsApp : Gtk.Application {
         main_window.add (grid);
 
         show_button.clicked.connect (() => {
-            var notification = new Notification ("Hello, world");
+            var notification = new Notification _(("Hello, world"));
             var icon = new GLib.ThemedIcon ("dialog-warning");
             notification.set_icon (icon);
-            notification.set_body ("This is my first notification");
+            notification.set_body _(("This is my first notification"));
             this.send_notification ("com.github.medeotl.notifications-app",
                   notification);
         });
 
         replace_button.clicked.connect (() => {
-            var notification = new Notification ("Hello Again");
-            notification.set_body ("This is my 2nd Notification! I'M URGENT!");
+            var notification = new Notification _(("Hello Again"));
+            notification.set_body _(("This is my 2nd Notification! I'M URGENT!"));
 
             var icon = new GLib.ThemedIcon ("dialog-warning");
             notification.set_icon (icon);
